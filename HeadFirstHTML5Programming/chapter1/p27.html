@@ -5,11 +5,12 @@
 		<title>My First JavaScript</title>
 	</head>
 	<body>
-		<script>
+        <script>
 		var drink="Energy Drink";
 		var lyrics="";
 	    var cans=99;
 		
+        /*
 		while (cans>0){
 			lyrics=lyrics+cans+"cans of"+drink+"on the wall <br>";
 			lyrics=lyrics+cans+"cans of"+drink+"<br>";
@@ -22,8 +23,19 @@
 				
 			}
 			cans=cans-1;
+            //document.write(lyrics);
 		}
 		document.write(lyrics);
+        */
+        
+        while (cans > 0) {
+            lyrics = "";
+            lyrics += cans + "cans of" + drink + "on the wall <br>";
+            lyrics += cans + "cans of" + drink + "<br>";
+            lyrics += "Take one down, pass it around <br>";
+            cans--;
+            document.write(lyrics);
+        }
 		</script>
 	</body>
 </html>
