@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>fido</title>
+    <meta charset="utf-8">
+    <script>
+    var fido = {
+        name: "Fido",
+        weight: 40,
+        breed: "Mixed",
+        loves: ["walks", "fetching balls"]
+    };
+    
+    if (fido.weight > 25) {
+        alert("WOOF")
+    } else {
+        alert("yip");
+    }
+    var breed = fido["breed"];
+    if (breed = "Mixed") {
+        alert("Best in show");
+    }
+    fido.weight = 27;
+    fido.breed = "Chawalla/Great Dane mix";
+    fido.loves.push("chewing bones");
+    console.log(fido.loves);
+    
+    var prop;
+    for (prop in fido) {
+        alert("Fido has a " + prop + " property ");
+        if (prop == "name") {
+            alert("This is " + fido[prop]);            
+        }
+    }
+    var likes = fido.loves;
+    var likeString = "Fido likes";
+    
+    for (var i = 0 ; i < likes.length; i++) {
+        likeString += " " + likes[i];
+    }
+    console.log(likeString);
+    
+    function bark(dog) {
+        if (dog.weight > 25) {
+            alert("WOOF");
+        } else {
+            alert("yip");
+        }
+    }
+    bark(fido);
+    
+    </script>
+    
+</head>
+<body>
+</body>
+</html>
