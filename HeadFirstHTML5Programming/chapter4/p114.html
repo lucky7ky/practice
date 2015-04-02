@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <title>Guess what I am thinking</title>
+    <meta charset="utf-8">
+    <style>
+    #content {
+        padding:0 10%;
+        margin-top:200px;
+        text-align:center;
+    }
+    </style> 
+    <script>
+    window.onload = init;
+    function init() {
+       // var guessInput = document.getElementById("guess");
+       // var guess = guessInput.value;
+       // var answer = checkGuess(guess);
+       // alert(answer);
+       var trybutton = document.getElementById("try");
+       trybutton.onclick = checkGuess;
+    }
+    
+    function checkGuess() {
+        var answers =[ "red", "green", "blue"];
+        var index = Math.floor(Math.random() * answers.length);
+        var guessInput = document.getElementById("guess");
+        var guess = guessInput.value;
+        if (guess == answers[index]) {
+            alert("You are right! I was thinking of " + answers[index]);
+        } else {
+            alert("Sorry, I was thinking of " + answers[index]);
+        }
+    }
+    
+    </script>
+</head>
+<body>
+    <div id="content">
+        <h1> Can you guess what I am thinking? </h1>
+        <form>
+            <input type="text" id="guess" size="40" placeholder="You can try">
+            <input type="button" id="try" value="Try">
+        </form>
+        
+        <p>Tip: red green blue (choose a color)</p>
+    </div>
+</body>
+</html>
