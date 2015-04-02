@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <title>a dog</title>
+    <meta charset="utf-8">
+    <script>
+    /*function bark(dogName, dogWeight) {
+        if (dogWeight <= 10) {
+            return dogName + " says Yip";
+        } else {
+            return dogName + " says Woof";
+        }
+    }
+    var sound = bark("Fido", 50);
+    alert(sound);
+    */
+    //practice
+        function a(x, y) {
+            var z = x * y + 1;
+            return z + x + y;
+        }
+        var b = a(3, 4);
+        console.log(b);
+        
+        function dogAge(age) {
+            return age * 7
+        }
+        var myDogAge = dogAge(4);
+        console.log(myDogAge);
+        
+        function addUp(numArray) {
+            var total=0;
+            for (var i = 0 ;i < numArray.length; i++) {
+                total += numArray[i];
+            }
+            return total;
+        }
+        var theTotal = addUp([1, 5, 3, 9]);
+        console.log(theTotal);
+        
+        function getAvatar(points) {
+            var avatar;
+            if (points < 100) {
+                avatar = "Mouse";
+            } else if (points > 100 && points < 1000) {
+                avatar = "Cat";
+            } else {
+                avatar = "Ape";
+            }
+            return avatar;
+        }
+        var myAvatar = getAvatar(335);
+        console.log(myAvatar)
+        
+        var a = 10;
+        function test(x) {
+            var a = 0;
+            console.log(a);
+        }
+        var b = test(3);
+        
+        function addOne(num) {
+            return num + 1;
+        }
+        var plusone = addOne;
+        var result = plusone(1);
+        console.log(result);
+        
+       // function(num) {
+       //     return num + 1;
+       // }
+        
+        var f = function(num) {
+            return num + 1;
+        };
+        var result = f(1);
+        console.log(result);
+        
+        window.onload = function() {
+            alert("hello");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
