@@ -24,9 +24,13 @@
     }
     function getNextShowing(movie) {
         var now = new Date().getTime();
+        console.log(now)
         for (var i = 0; i < movie.showtimes.length; i++) {
             var showtime = getTimeFromString(movie.showtimes[i]);
-            if ((showtime - now) > 0) {
+            console.log(showtime);
+            var value = showtime - now;
+            console.log(value);
+            if (value > 0) {
                 return "Next showing of " + movie.title + " is " + movie.showtimes[i];
             }
         }
@@ -38,11 +42,31 @@
         theTime.setHours( parseInt(time[1]) + (time[3] ? 12 : 0) );
         theTime.setMinutes( parseInt(time[2]) || 0);
         return theTime.getTime();
-    };
-    var nextShowing = getNextShowing(movie1);
-    alert(nextShowing);
-    var nextShowing = getNextShowing(movie2);
-    alert(nextShowing);
+    }
+    function testBreak() {
+        for (var i = 0; i < 5; i++) {
+            if (i == 2) {
+                break;
+            }
+            console.log(i);
+        }
+        console.log("finished testBreak");
+    }
+    testBreak();
+    function testContinue() {
+        for (var i = 0; i < 5; i++) {
+            if (i == 2) {
+                continue;
+            }
+            console.log(i);
+        }
+        console.log("finished testContinue");
+    }
+    testContinue();
+    //var nextShowing = getNextShowing(movie1);
+    //alert(nextShowing);
+    //var nextShowing = getNextShowing(movie2);
+   // alert(nextShowing);
     var nextShowing = getNextShowing(movie3);
     alert(nextShowing);
     </script>
