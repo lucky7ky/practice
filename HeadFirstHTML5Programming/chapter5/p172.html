@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <title>Where am I?</title>
     <script>
+    var ourCoords = {
+        latitude: 47.624851,
+        longitude: -122.52099
+    };
+    
     window.onload = getMyLocation;
     //console.log(navigator.geolocation);
     function getMyLocation() {
@@ -18,6 +23,10 @@
         var longitude = position.coords.longitude;
         var div = document.getElementById("location");
         div.innerHTML = "You are at Latitude: " + latitude + " , Longitude: " + longitude;
+        
+        var km = computeDistance(position.coords, ourCoords);
+        var distance = document.getElementById("distance");
+        distance.innerHTML = "You are " + km + " km from the WickedlySmart HQ";
     };
     
     function displayError(error) {
@@ -34,12 +43,32 @@
         var div = document.getElementById("location");
         div.innerHTML = errorMessage;
     }
+    
+    function computeDistance(startCoords, destCoords) {
+        var startLatRads = degreesToRadians(startCoords.latitude);
+        var startlongRads = degreeToRadians(startCoords.longitude);
+        var destLatRads = degreeToRadians(destCoords.latitude);
+        var destLongRads = degreeToRadians(destCoords.longitude);
+        
+        var Radius = 6371; //radius of the Earth in km
+        var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) + Math.cos(startLatRads) * Math.cos(destLatRads) * Math.cos(startLongRads - destLongRads)) * Radius;
+        return distance;
+    }
+    function degreesToRadians(degrees) {
+        var radians = (degrees * Math.PI)/180;
+        return radians;
+    }
+    
+    
     </script>
     
 </head>
 <body>
     <div id="location">
         Your location will go here.
+    </div>
+    <div id="distance">
+        Distance from WickedlySmart HQ will go here.
     </div>
 </body>
 </html>
