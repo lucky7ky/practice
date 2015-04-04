@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <title>My plans</title>
+    <meta charset="utf-8">
+    <style>
+    #content {
+        text-align:center;
+        padding:0 10%;
+        margin-top:200px;
+    }
+    #planlist {
+        position:relative;
+        top:30px;
+        list-style-position:inside;
+        border-radius:2px;
+        padding:0;
+        margin:0 30%;
+        
+        
+    }
+    li {
+        text-align:left;
+        border-bottom-width:1px;
+        padding:5px;
+        margin:0px;
+        border-bottom-width:1px;
+        border-bottom-color:rgb(210, 198, 198);
+        border-bottom-style:dashed;
+        margin-bottom:10px;
+    }
+    #planTextInput {
+        margin-left:20px;
+        margin-right:5px;
+    }
+    </style>
+    <script>
+    function handleButtonClick() {
+       var textInput = document.getElementById ("planTextInput");
+       var planName = textInput.value;
+       if (planName == "") {
+           alert("You haven't made a plan!");
+       } else {
+       var li = document.createElement("li");
+       li.innerHTML = planName;
+       var ol = document.getElementById("planlist");
+       ol.appendChild(li);
+       }
+    }
+    
+    function init() {
+        var button = document.getElementById ("addButton");
+        button.onclick = handleButtonClick;
+        
+    }
+    window.onload = init;
+
+    </script>
+   
+</head>
+<body>
+    <div id="content">
+        <h1>Make Some Plans</h1>
+        <form>
+            <input type="text" id="planTextInput" size=40 placeholder="Plan name">
+            <input type="button" id="addButton" value="Add Plan">
+        </form>
+        <ol id="planlist">
+        </ol>
+   </div>
+</body>
+</html>
