@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <script>
+    var VERSION = 1.1;
+    var AUTHOR = "KaiyiZhang";
+    
+    window.onload = init;
+    function init() {
+        var inputbutton = document.getElementById("button");
+        console.log(inputbutton);
+        inputbutton.onclick = a;
+        
+    }
+    //var d;
+    function a() {
+        var c = b();
+        alert(c);
+        var c = b();
+    }
+    // var c = b();
+    // function a() {
+       // alert("hello!");
+    //}
+    /*
+    function add(x,y) {
+        return x+y;
+    }
+    var c = add(1,2);
+    */
+    //api
+    function b() {
+        return "123";
+    }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" id="button" value="submit">
+    </form>
+</body>
+</html>
