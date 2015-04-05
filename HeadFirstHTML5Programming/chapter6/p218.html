@@ -6,7 +6,7 @@
     <style>
     </style>
     <script>
-    var url = "http://someserver.com/data.json";
+    /*var url = "http://someserver.com/data.json";
     var request = new XMLHttpRequest();
     request.open("GET",url);
     request.onload = function () {
@@ -16,11 +16,30 @@
         }
     }
     request.send(null);
+    
+    */
+    
+    window.onload = function () {
+        var url = "http://wickedlysmart.com/ifeelluckytoday";
+        var request = new XMLHttpRequest();
+        request.onload = function () {
+            if (request.status == 200) {
+                displayluck(request.responseText)
+            }
+        };
+        request.open("GET", url);
+        request.send(null);
+    }
+    function displayluck(luck) {
+        var p = document.getElementById("luck");
+        p,innerHTML = "Today you are" + luck;
+    }
     </script>
 </head>
 <body>
-    <h1>Mighty Gumball Sales</h1>
+    <!-- <h1>Mighty Gumball Sales</h1>
     <div id="sales">
-    </div>
+    </div> -->
+        <p id="luck"></p>
 </body>
 </html>
