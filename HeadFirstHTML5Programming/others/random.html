@@ -29,7 +29,7 @@
         div = randomArray;
         console.log(div);
        }
-    */
+    
     function arrange() {
         var div = document.getElementsByTagName("div");
         // console.log(div);
@@ -48,7 +48,18 @@
         c.innerHTML = randomArray[div.length-(i+1)];
         //console.log(c.innerHTML);
         }; 
-    }  
+    }  */
+        function arrange() {
+            var div = document.getElementsByTagName("div");
+            //console.log(div);
+            var randomArray = new Array();
+            for ( var i=0 ; i < div.length; i++) {
+               randomArray[i] = div.item(div.length-(i+1)).innerHTML;
+            }
+           for (var i =0 ; i < div.length;i++) {
+               div.item(i).innerHTML = randomArray[i];
+           }
+       }
          /*
             var d1 = document.getElementById("d1");
             var d2 = document.getElementById("d2");

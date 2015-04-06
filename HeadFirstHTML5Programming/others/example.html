@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>random test</title>
+    <script>
+    window.onload = init;
+    function init() {
+        var a = {
+            "name": "YanyiWu"
+        };
+        var b = a;
+        console.log(a);
+        console.log(b);
+        b.name = "KaiyiZhang";
+        console.log(a);
+        console.log(b);
+
+        var x = "YanyiWu";
+        var y = x;
+        console.log(x);
+        console.log(y);
+        y = "KaiyiZhang";
+        console.log(x);
+        console.log(y);
+    }
+    </script>
+</head>
+<body>
+</body>
+</html>
