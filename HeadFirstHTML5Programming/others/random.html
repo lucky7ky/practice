@@ -9,7 +9,8 @@
         var clickbutton = document.getElementById("click");
         clickbutton.onclick= arrange;
     }
-    /*function arrange() {
+    /*
+    function arrange() {
         var pa = document.getElementById("a");
         var pb = document.getElementById("b");
         var pc = document.getElementById("c");
@@ -17,26 +18,38 @@
         pa.innerHTML = pc.innerHTML;
         pc.innerHTML = temp;    
     }
-   */
-        function arrange() {
-            var randomArray = new Array();
-            for (var i=0; i < 10; i++) {
-                var b = i + 1;
-                //console.log(b);
-                var a = document.getElementById("d" + b);
-                //console.log(a);
-                randomArray[i] = a.innerHTML;
-                //console.log(randomArray); 
-                      
-            };
-            for ( var i=0 ; i < 10; i++) {
-                var c = document.getElementById("d" + (i + 1));
-                //console.log(c); 
-                c.innerHTML = randomArray[9-i];
-                //console.log(c.innerHTML);
-            }    
-            
-            /*
+   
+    function arrange() {
+        var div = document.getElementsByTagName("div");
+        console.log(div);
+        var randomArray = new Array();
+        for ( var i=0 ; i < div.length; i++) {
+        randomArray[i]=div[div.length-(i+1)];             
+        }
+        div = randomArray;
+        console.log(div);
+       }
+    */
+    function arrange() {
+        var div = document.getElementsByTagName("div");
+        // console.log(div);
+        var randomArray = new Array();
+        for (var i=0; i < div.length; i++) {
+        var b = i + 1;
+        //console.log(b);
+        var a = document.getElementById("d" + b);
+        //console.log(a);
+        randomArray[i] = a.innerHTML;
+        //console.log(randomArray); 
+        };
+        for ( var i=0 ; i < div.length; i++) {
+        var c = document.getElementById("d" + (i + 1));
+         //console.log(c); 
+        c.innerHTML = randomArray[div.length-(i+1)];
+        //console.log(c.innerHTML);
+        }; 
+    }  
+         /*
             var d1 = document.getElementById("d1");
             var d2 = document.getElementById("d2");
             var d3 = document.getElementById("d3");
@@ -75,7 +88,7 @@
             d3.innerHTML = temp8;
             d2.innerHTML = temp9;
             d1.innerHTML = temp10;*/
-        }
+        
     </script>
 </head>
 <body>
