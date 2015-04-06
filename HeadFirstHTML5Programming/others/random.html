@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>random test</title>
+    <script>
+    window.onload = init;
+    function init() {
+        var clickbutton = document.getElementById("click");
+        clickbutton.onclick= arrange;
+    }
+    function arrange() {
+        var pa = document.getElementById("a");
+        var pb = document.getElementById("b");
+        var pc = document.getElementById("c");
+        var temp = pa.innerHTML;
+        pa.innerHTML = pc.innerHTML;
+        pc.innerHTML = temp;    
+    }
+   
+    </script>
+</head>
+<body>
+    <input type="button" id="click" value="click">
+    <p id="a"> apple</p>
+    <p id="b"> orange</p>
+    <p id="c"> banana</p>
+</body>
+</html>
