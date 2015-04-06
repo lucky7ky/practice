@@ -29,7 +29,18 @@
             var d8 = document.getElementById("d8");
             var d9 = document.getElementById("d9");
             var d10 = document.getElementById("d10");
-            var temp10 = d10.innerHTML;
+            var randomArray = new Array(d1.innerHTML, d2.innerHTML, d3.innerHTML, d4.innerHTML, d5.innerHTML, d6.innerHTML, d7.innerHTML, d8.innerHTML, d9.innerHTML, d10.innerHTML);
+            d1.innerHTML = randomArray[9];
+            d2.innerHTML = randomArray[8];
+            d3.innerHTML = randomArray[7];
+            d4.innerHTML = randomArray[6];
+            d5.innerHTML = randomArray[5];
+            d6.innerHTML = randomArray[4];
+            d7.innerHTML = randomArray[3];
+            d8.innerHTML = randomArray[2];
+            d9.innerHTML = randomArray[1];
+            d10.innerHTML = randomArray[0];
+           /* var temp10 = d10.innerHTML;
             var temp9 = d9.innerHTML;
             var temp8 = d8.innerHTML;
             var temp7 = d7.innerHTML;
@@ -43,7 +54,7 @@
             d4.innerHTML = temp7;
             d3.innerHTML = temp8;
             d2.innerHTML = temp9;
-            d1.innerHTML = temp10;
+            d1.innerHTML = temp10;*/
         }
     </script>
 </head>
