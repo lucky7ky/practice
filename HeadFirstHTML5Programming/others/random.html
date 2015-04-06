@@ -9,7 +9,7 @@
         var clickbutton = document.getElementById("click");
         clickbutton.onclick= arrange;
     }
-    function arrange() {
+    /*function arrange() {
         var pa = document.getElementById("a");
         var pb = document.getElementById("b");
         var pc = document.getElementById("c");
@@ -17,13 +17,50 @@
         pa.innerHTML = pc.innerHTML;
         pc.innerHTML = temp;    
     }
-   
+   */
+        function arrange() {
+            var d1 = document.getElementById("d1");
+            var d2 = document.getElementById("d2");
+            var d3 = document.getElementById("d3");
+            var d4 = document.getElementById("d4");
+            var d5 = document.getElementById("d5");
+            var d6 = document.getElementById("d6");
+            var d7 = document.getElementById("d7");
+            var d8 = document.getElementById("d8");
+            var d9 = document.getElementById("d9");
+            var d10 = document.getElementById("d10");
+            var temp10 = d10.innerHTML;
+            var temp9 = d9.innerHTML;
+            var temp8 = d8.innerHTML;
+            var temp7 = d7.innerHTML;
+            var temp6 = d6.innerHTML;
+            d10.innerHTML = d1.innerHTML;
+            d9.innerHTML = d2.innerHTML;
+            d8.innerHTML = d3.innerHTML;
+            d7.innerHTML = d4.innerHTML;
+            d6.innerHTML = d5.innerHTML;
+            d5.innerHTML = temp6;
+            d4.innerHTML = temp7;
+            d3.innerHTML = temp8;
+            d2.innerHTML = temp9;
+            d1.innerHTML = temp10;
+        }
     </script>
 </head>
 <body>
     <input type="button" id="click" value="click">
-    <p id="a"> apple</p>
+   <!-- <p id="a"> apple</p>
     <p id="b"> orange</p>
-    <p id="c"> banana</p>
+    <p id="c"> banana</p>-->
+       <div id="d1"> 1 </div>
+       <div id="d2"> 2 </div>
+       <div id="d3"> 3 </div>
+       <div id="d4"> 4 </div>
+       <div id="d5"> 5 </div>
+       <div id="d6"> 6 </div>
+       <div id="d7"> 7 </div>
+       <div id="d8"> 8 </div>
+       <div id="d9"> 9 </div>
+       <div id="d10"> 10 </div>
 </body>
 </html>
