@@ -19,6 +19,24 @@
     }
    */
         function arrange() {
+            var randomArray = new Array();
+            for (var i=0; i < 10; i++) {
+                var b = i + 1;
+                //console.log(b);
+                var a = document.getElementById("d" + b);
+                //console.log(a);
+                randomArray[i] = a.innerHTML;
+                //console.log(randomArray); 
+                      
+            };
+            for ( var i=0 ; i < 10; i++) {
+                var c = document.getElementById("d" + (i + 1));
+                //console.log(c); 
+                c.innerHTML = randomArray[9-i];
+                //console.log(c.innerHTML);
+            }    
+            
+            /*
             var d1 = document.getElementById("d1");
             var d2 = document.getElementById("d2");
             var d3 = document.getElementById("d3");
@@ -40,7 +58,9 @@
             d8.innerHTML = randomArray[2];
             d9.innerHTML = randomArray[1];
             d10.innerHTML = randomArray[0];
-           /* var temp10 = d10.innerHTML;
+            //test
+            
+            var temp10 = d10.innerHTML;
             var temp9 = d9.innerHTML;
             var temp8 = d8.innerHTML;
             var temp7 = d7.innerHTML;
