@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <script>
+    window.onload = function() {
+        var url ="http://127.0.0.1:8080/HeadFirstHTML5Programming/chapter6/sales.json";
+        var request = new XMLHttpRequest();
+        request.open("GET", url);
+        request.onload = function() {
+            if (request.status == 200) {
+                updateSales(request.responseText);
+            }
+        }; 
+        request.send(null);
+    }
+    function updateSales(responseText) {
+        var salesDiv = document.getElementById("sales");
+        salesDiv.innerHTML = responseText;
+    }
+    
+    </script>
+</head>
+    <body>
+        <h1> Mighty Gumball Sales</h1>
+        <div id="sales">
+        </div>
+    </body>
+</html>
