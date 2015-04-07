@@ -44,11 +44,12 @@
         };
     }
      */
+    var lastReportTime = 0;
     window.onload = function() {
-        setInterval(handleRefresh, 2000);
+        setInterval(handleRefresh,8000);
     };
     function handleRefresh() {
-        var url ="http://gumball.wickedlysmart.com/?callback=updateSales";
+        var url ="http://gumball.wickedlysmart.com"+ "?callback=updateSales"+"&lastReportTime="+lastReportTime+ "&random="+(new Date()).getTime();
         
         var newScriptElement = document.createElement("script");
         newScriptElement.setAttribute("src", url);
@@ -61,6 +62,8 @@
         } else {
             head.replaceChild(newScriptElement, oldScriptElement);
         };
+        console.log(newScriptElement);
+        console.log(oldScriptElement);
     }
     function updateSales(sales) {
         var salesDiv = document.getElementById("sales");
@@ -70,6 +73,9 @@
             div.setAttribute("class", "saleItem");
             div.innerHTML = sale.name + " sold " + sale.sales + " gumballs ";
             salesDiv.appendChild(div);
+            if (sales.length > 0) {
+                lastReportTime = sales[sales.length - 1].time
+            }
         };
     }
     </script>
