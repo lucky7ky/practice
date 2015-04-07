@@ -17,6 +17,7 @@
     }  
     </style>
     <script>
+    /*
     window.onload = function() {
         var url ="http://127.0.0.1:8080/HeadFirstHTML5Programming/chapter6/sales.json";
         var request = new XMLHttpRequest();
@@ -28,6 +29,8 @@
         }; 
         request.send(null);
     }
+   
+    
     function updateSales(responseText) {
         var salesDiv = document.getElementById("sales");
         //salesDiv.innerHTML = responseText;
@@ -40,12 +43,24 @@
             salesDiv.appendChild(div);
         };
     }
+     */
     
+    function updateSales(sales) {
+        var salesDiv = document.getElementById("sales");
+        for (var i = 0; i < sales.length; i++) {
+            var sale = sales[i];
+            var div = document.createElement("div");
+            div.setAttribute("class", "saleItem");
+            div.innerHTML = sale.name + " sold " + sale.sales + " gumballs ";
+            salesDiv.appendChild(div);
+        };
+    }
     </script>
 </head>
 <body>
     <h1> Mighty Gumball Sales</h1>
     <div id="sales">
     </div>
+    <script src="http://gumball.wickedlysmart.com/?callback=updateSales"></script>
 </body>
 </html>
