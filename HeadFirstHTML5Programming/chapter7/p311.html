@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+    #here {
+        border:1px solid black;
+    }
+    </style>
+    <script>
+    window.onload = function() {
+        var canvas = document.getElementById("here");
+        var context = canvas.getContext("2d");
+        context.beginPath();
+        context.moveTo(100, 150);
+        context.lineTo(250, 75);
+        context.lineTo(125, 30);
+        context.closePath();
+        context.lineWidth = 5;
+        context.stroke();
+        context.fillStyle = "red";
+        context.fill();   
+    }
+   
+    </script>
+</head>
+<body>
+    <canvas width="600px" height="400px" id="here"></canvas>
+</body>
+</html>
