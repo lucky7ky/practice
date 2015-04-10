@@ -23,7 +23,7 @@
         var selectObj = document.getElementById("shape");
         var index = selectObj.selectedIndex;
         var shape = selectObj[index].value;
-        
+        drawText(canvas, context); 
         if (shape == "squares") {
             for (var squares = 0; squares < 20; squares++) {
                 drawSquare(canvas, context);
@@ -63,6 +63,33 @@
         context.fillStyle = "lightblue";
         context.fillRect(x, y, w, w);
     }
+    function updateTweets(tweets) {
+        var tweetsSelection = document.getElementById("tweets");
+        for (var i = 0; i < tweets.length; i++) {
+            tweet = tweets[i];
+            var option = document.createElement("option");
+            option.text = tweet.text;
+            option.value = tweet.text.replace("\"", "'");
+            tweetsSelection.options.add(option);
+        }
+        tweetsSelection.selectedIndex = 0;
+    }
+    function drawText(canvas, context) {
+        var selectObj = document.getElementById("foregroundColor");
+        var index = selectObj.selectedIndex;
+        var fgColor = selectObj[index].value;
+        context.fillStyle = fgColor;
+        context.font = "bold 1em sans-serif";
+        context.textAlign = "left";
+        context.fillText("I saw this Tweet",20,40);
+        console.log(1);
+
+        context.font = "bold 1em sans-serif";
+        context.textAlign = "right";
+        context.fillText("and all I got was this lousy t-shirt!",canvas.width-20,canvas.height-40);
+        console.log(fgColor);
+    }
+
     </script>
 </head>
 <body>
@@ -102,5 +129,7 @@
             <input type="button" id="previewButton" value="Preview">
         </p>
     </form>
+    <!-- <script src="http://twitter.com/statuses/user_timeline/wickedsmartly.json?callback=updateTweets">-->
+    </script>
 </body>
 </html>
