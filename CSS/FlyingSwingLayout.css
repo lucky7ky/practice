@@ -1,0 +1,28 @@
+* {
+    padding:0px;
+    margin:0px;
+    text-align:center;
+}
+#header, #footer {
+    background-color:#aaa;
+}
+.main {
+    float:left;
+    width:100%;
+    background-color:white;
+}
+.main-wrap {
+    margin:0 230px 0 190px;
+}
+.sub {
+    float:left;
+    width:190px;
+    margin-left:-100%;
+    background-color:yellow;
+}
+.extra {
+    float:left;
+    width:230px;
+    margin-left:-230px;
+    background-color:purple;
+}
