@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+            var a = "window a"; // window.a
+            var b = "window b"; // window.b
+            function functA() {
+                var a; // window.funA.a
+                var b; // window.funA.b
+                a = "functA a"; // window.funcA.a
+                b = "functA b"; // window.funcA.b
+            }
+            function functB() {
+                a = "funB a";//window.a
+                b = "funB b";//window.b
+            }
+            function init() {
+                functA();
+                console.log(a); // window.a
+                console.log(b); // window.b
+                functB();
+                console.log(a); // window.a
+                console.log(b); // window.b
+            }
+            window.onload = init;
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
