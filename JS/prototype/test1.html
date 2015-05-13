@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <script>
+            function init() {
+                function Animal(name) {
+                    this.kind = "animal";
+                    this.name = name;
+                    this.run = function () {
+                        return this.name + 'is' + this.kind;
+                    }
+                }
+                var a;
+                a = new Animal("lily");
+                console.log(a.run());
+
+
+                function AuthorInfo() {
+                    this.author = "kaiyizhang";
+                }
+                AuthorInfo.prototype = {
+                    "authorFather": "weizhang",
+                }
+
+                function Dog(name,age) {
+                    this.name = name;
+                    this.age = age;
+                    this.run = function () {
+                        return this.name + 'is'+ this.age +'years old';
+                    };
+                }
+                Dog.prototype = new AuthorInfo();
+
+                a = new Dog("David",2);
+                console.log(a.author);
+                console.log(a.authorFather);
+                b = new Dog("Lucy",3);
+                console.log(b.author);
+
+                //alert(a.run());
+                
+                function Cat(name, age) {
+                    this.name = name;
+                    this.age = age;
+                    this.run = function () {
+                        return this.name + 'is'+ this.age +'years old';
+                    };
+                }
+                Cat.prototype = new AuthorInfo();
+
+                a = new Cat("Lucy",3);
+                a.kind = "Cat Kind";
+                console.log(a.authorFather);
+
+                //Dog.prototype.name = "David";
+                //Dog.prototype.age = 2;
+                //Dog.prototype.run = functon() {
+                //    return Dog.prototype.name +'is'+ Dog.prototype.age +'years old';
+                //};
+            }
+            window.onload = init;
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

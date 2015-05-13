@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script>
+            // one click, one count
+            function click() {
+                var i = 0; //TODO
+                function fn() { 
+                    i++;
+                    return i;
+                }
+                return fn;
+            }
+                var a = click();
+            function alertclick() {
+                alert(a());
+
+            }
+            function init() {
+                //var i = click();
+                //console.log(i); // 1
+                //i = click();
+                //console.log(i); // 2
+                document.getElementById("btn").onclick = alertclick;
+            }
+            window.onload =  init;
+        </script>
+        <button id="btn" >click</button>
+    </head>
+    <body>
+    </body>
+</html>
