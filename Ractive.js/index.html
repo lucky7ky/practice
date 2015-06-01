@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <title>Ractiive test</title>
+</head>
+<body>
+    <h1>Ractive test</h1>
+    <div id="container"></div>
+    <script id="template" type="text/ractive">
+        <p>Hello,{{name}}!</p>
+    </script>
+    <script src = "http://cdn.ractivejs.org/latest/ractive-legacy.min.js"></script>
+    <script>
+        var ractive = new Ractive ({
+            el:'#container',
+            template:'#template',
+            data:{name: 'world'}
+        })
+    </script>
+</body>
+</html>
+<!--name:'world' is the initial data,-->
+<!--you can use ractive.set('name','Jack') to change name.-->
